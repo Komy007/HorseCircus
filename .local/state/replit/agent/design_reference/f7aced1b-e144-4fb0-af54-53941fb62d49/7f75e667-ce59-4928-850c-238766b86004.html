@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>몽골 마상곡예 공연 투자 제안서 | Mongolian Equestrian Show Investment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mongolian: {
+                            50: '#FFF7ED',
+                            100: '#FFEDD5',
+                            200: '#FED7AA',
+                            300: '#FDBA74',
+                            400: '#FB923C',
+                            500: '#F97316',
+                            600: '#EA580C',
+                            700: '#C2410C',
+                            800: '#9A3412',
+                            900: '#7C2D12'
+                        },
+                        earth: {
+                            50: '#FEFDF8',
+                            100: '#FEF7E0',
+                            200: '#FCEFC7',
+                            300: '#F8E3A3',
+                            400: '#F2D176',
+                            500: '#EAB308',
+                            600: '#CA8A04',
+                            700: '#A16207',
+                            800: '#854D0E',
+                            900: '#713F12'
+                        }
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-50 text-gray-900">
+    <!-- Language Toggle -->
+    <button onclick="toggleLanguage()" 
+            class="fixed top-4 right-4 z-50 bg-white shadow-lg rounded-full px-4 py-2 text-sm font-medium text-mongolian-600 hover:bg-mongolian-50 transition-colors duration-200">
+        <span id="lang-toggle-ko">ENGLISH</span>
+        <span id="lang-toggle-en" class="hidden">한국어</span>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-40" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-mongolian-600 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">🐎</span>
+                    </div>
+                    <span class="font-bold text-xl text-gray-900" id="nav-title-ko">몽골 마상곡예</span>
+                    <span class="font-bold text-xl text-gray-900 hidden" id="nav-title-en">Mongolian Equestrian</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#overview" class="text-gray-600 hover:text-mongolian-600 transition-colors" id="nav-overview-ko">개요</a>
+                    <a href="#overview" class="text-gray-600 hover:text-mongolian-600 transition-colors hidden" id="nav-overview-en">Overview</a>
+                    <a href="#investment" class="text-gray-600 hover:text-mongolian-600 transition-colors" id="nav-investment-ko">투자포인트</a>
+                    <a href="#investment" class="text-gray-600 hover:text-mongolian-600 transition-colors hidden" id="nav-investment-en">Investment</a>
+                    <a href="#revenue" class="text-gray-600 hover:text-mongolian-600 transition-colors" id="nav-revenue-ko">수익모델</a>
+                    <a href="#revenue" class="text-gray-600 hover:text-mongolian-600 transition-colors hidden" id="nav-revenue-en">Revenue</a>
+                    <a href="#contact" class="text-gray-600 hover:text-mongolian-600 transition-colors" id="nav-contact-ko">문의</a>
+                    <a href="#contact" class="text-gray-600 hover:text-mongolian-600 transition-colors hidden" id="nav-contact-en">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background with traditional Mongolian horseman and Angkor Wat silhouette -->
+        <div class="absolute inset-0 bg-gradient-to-br from-mongolian-600 via-mongolian-500 to-earth-600"></div>
+        <!-- Subtle pattern overlay for texture -->
+        <div class="absolute inset-0 opacity-10 bg-repeat" style="background-image: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.4"><circle cx="30" cy="30" r="4"/></g></svg>')"></div>
+        
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center text-white">
+            <!-- Traditional Mongolian horseman silhouette integrated with Angkor Wat backdrop -->
+            <div class="mb-8">
+                <!-- Heroic riding scene overlaid on Angkor Wat temple silhouette -->
+                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600" 
+                     alt="Mongolian horseman performing traditional equestrian show" 
+                     class="w-full max-w-4xl mx-auto rounded-2xl shadow-2xl opacity-90" />
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                <span id="hero-title-ko">시엠립 몽골 마상곡예 공연</span>
+                <span id="hero-title-en" class="hidden">Mongolian Equestrian Show<br>in Siem Reap</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
+                <span id="hero-subtitle-ko">앙코르와트 관광객을 위한 전통과 모험의 융합<br>연간 순익 <span class="font-bold text-earth-200">$2.1M ~ $3.3M</span> 예상</span>
+                <span id="hero-subtitle-en" class="hidden">Where tradition meets thrill for global travelers<br>Expected annual net profit: <span class="font-bold text-earth-200">$2.1M ~ $3.3M</span></span>
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="scrollToSection('investment')" 
+                        class="bg-white text-mongolian-600 font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+                    <span id="cta-invest-ko">🎯 투자 제안서 보기</span>
+                    <span id="cta-invest-en" class="hidden">🎯 View Investment Proposal</span>
+                </button>
+                <button onclick="openBrochure()" 
+                        class="bg-transparent border-2 border-white text-white font-semibold py-4 px-8 rounded-lg hover:bg-white hover:text-mongolian-600 transition-all duration-200">
+                    <span id="cta-brochure-ko">📄 브로셔 다운로드</span>
+                    <span id="cta-brochure-en" class="hidden">📄 Download Brochure</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Overview Section -->
+    <section id="overview" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    <span id="overview-title-ko">📊 사업 개요</span>
+                    <span id="overview-title-en" class="hidden">📊 Project Overview</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    <span id="overview-desc-ko">동남아시아 최초의 몽골 마상곡예 공연장으로 시엠립 관광의 새로운 랜드마크를 창조합니다</span>
+                    <span id="overview-desc-en" class="hidden">Creating a new landmark in Siem Reap tourism as Southeast Asia's first Mongolian equestrian performance venue</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- Key Metrics Cards -->
+                <div class="bg-gradient-to-br from-mongolian-50 to-earth-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-2">🎭</div>
+                    <h3 class="font-semibold text-gray-900 mb-2">
+                        <span id="metric1-title-ko">일일 공연</span>
+                        <span id="metric1-title-en" class="hidden">Daily Shows</span>
+                    </h3>
+                    <p class="text-2xl font-bold text-mongolian-600">2회</p>
+                    <p class="text-sm text-gray-600">
+                        <span id="metric1-desc-ko">회당 500명 수용</span>
+                        <span id="metric1-desc-en" class="hidden">500 guests per show</span>
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-earth-50 to-mongolian-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-2">💰</div>
+                    <h3 class="font-semibold text-gray-900 mb-2">
+                        <span id="metric2-title-ko">연간 순익</span>
+                        <span id="metric2-title-en" class="hidden">Annual Profit</span>
+                    </h3>
+                    <p class="text-2xl font-bold text-earth-600">$2.1M+</p>
+                    <p class="text-sm text-gray-600">
+                        <span id="metric2-desc-ko">보수적 추정치</span>
+                        <span id="metric2-desc-en" class="hidden">Conservative estimate</span>
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-2">⏱️</div>
+                    <h3 class="font-semibold text-gray-900 mb-2">
+                        <span id="metric3-title-ko">투자 회수</span>
+                        <span id="metric3-title-en" class="hidden">ROI Timeline</span>
+                    </h3>
+                    <p class="text-2xl font-bold text-emerald-600">1.5년</p>
+                    <p class="text-sm text-gray-600">
+                        <span id="metric3-desc-ko">운영 안정화 기준</span>
+                        <span id="metric3-desc-en" class="hidden">Based on stable operations</span>
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-2">🌏</div>
+                    <h3 class="font-semibold text-gray-900 mb-2">
+                        <span id="metric4-title-ko">시장 독점</span>
+                        <span id="metric4-title-en" class="hidden">Market Position</span>
+                    </h3>
+                    <p class="text-2xl font-bold text-indigo-600">최초</p>
+                    <p class="text-sm text-gray-600">
+                        <span id="metric4-desc-ko">동남아 유일</span>
+                        <span id="metric4-desc-en" class="hidden">Only in Southeast Asia</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Location Advantages -->
+            <div class="bg-gray-50 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                    <span id="location-title-ko">🗺️ 시엠립 입지 장점</span>
+                    <span id="location-title-en" class="hidden">🗺️ Siem Reap Location Advantages</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 bg-mongolian-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-mongolian-600 font-bold">✈️</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">
+                                <span id="loc1-title-ko">공항 접근성</span>
+                                <span id="loc1-title-en" class="hidden">Airport Access</span>
+                            </h4>
+                            <p class="text-sm text-gray-600">
+                                <span id="loc1-desc-ko">시엠립 국제공항에서 15분 거리, 관광객 유입 최적화</span>
+                                <span id="loc1-desc-en" class="hidden">15 minutes from Siem Reap International Airport, optimized for tourist inflow</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 bg-earth-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-earth-600 font-bold">🏛️</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">
+                                <span id="loc2-title-ko">앙코르와트 연계</span>
+                                <span id="loc2-title-en" class="hidden">Angkor Wat Connection</span>
+                            </h4>
+                            <p class="text-sm text-gray-600">
+                                <span id="loc2-desc-ko">세계문화유산 관광 루트에 포함, 자연스러운 고객 유치</span>
+                                <span id="loc2-desc-en" class="hidden">Included in World Heritage tourism route, natural customer attraction</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-green-600 font-bold">🚌</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">
+                                <span id="loc3-title-ko">교통 편의</span>
+                                <span id="loc3-title-en" class="hidden">Transportation</span>
+                            </h4>
+                            <p class="text-sm text-gray-600">
+                                <span id="loc3-desc-ko">무료 툭툭 서비스 제공, 시내 호텔에서 직접 픽업</span>
+                                <span id="loc3-desc-en" class="hidden">Free tuk-tuk service, direct pickup from city hotels</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Points Section -->
+    <section id="investment" class="py-20 bg-gradient-to-br from-mongolian-50 to-earth-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    <span id="invest-title-ko">💎 투자 포인트</span>
+                    <span id="invest-title-en" class="hidden">💎 Investment Highlights</span>
+                </h2>
+                <p class="text-xl text-gray-600">
+                    <span id="invest-desc-ko">검증된 비즈니스 모델과 독점적 시장 기회</span>
+                    <span id="invest-desc-en" class="hidden">Proven business model with exclusive market opportunity</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <!-- Investment Highlights Cards -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-mongolian-100 rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-2xl">🎯</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">
+                            <span id="point1-title-ko">독점적 시장 기회</span>
+                            <span id="point1-title-en" class="hidden">Exclusive Market Opportunity</span>
+                        </h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="text-mongolian-500 mr-2">•</span>
+                            <span id="point1-1-ko">동남아시아 유일의 몽골 마상곡예 공연</span>
+                            <span id="point1-1-en" class="hidden">Only Mongolian equestrian show in Southeast Asia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-mongolian-500 mr-2">•</span>
+                            <span id="point1-2-ko">캄보디아 정부의 관광 투자 우대 정책</span>
+                            <span id="point1-2-en" class="hidden">Cambodian government's tourism investment incentives</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-mongolian-500 mr-2">•</span>
+                            <span id="point1-3-ko">경쟁사 부재로 인한 시장 선점 효과</span>
+                            <span id="point1-3-en" class="hidden">First-mover advantage with no direct competitors</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-earth-100 rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-2xl">📈</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">
+                            <span id="point2-title-ko">안정적 수익 구조</span>
+                            <span id="point2-title-en" class="hidden">Stable Revenue Structure</span>
+                        </h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="text-earth-500 mr-2">•</span>
+                            <span id="point2-1-ko">다중 수익원: 티켓 + 체험 + 기념품 + F&B</span>
+                            <span id="point2-1-en" class="hidden">Multiple revenue streams: Tickets + Experience + Souvenirs + F&B</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-earth-500 mr-2">•</span>
+                            <span id="point2-2-ko">여행사 패키지 포함으로 안정적 고객 확보</span>
+                            <span id="point2-2-en" class="hidden">Stable customer base through travel agency packages</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-earth-500 mr-2">•</span>
+                            <span id="point2-3-ko">성수기/비수기 편차 최소화 전략</span>
+                            <span id="point2-3-en" class="hidden">Strategy to minimize seasonal variations</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-2xl">🚀</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">
+                            <span id="point3-title-ko">확장 가능성</span>
+                            <span id="point3-title-en" class="hidden">Expansion Potential</span>
+                        </h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            <span id="point3-1-ko">말 테마 체험존 및 승마 교육 프로그램</span>
+                            <span id="point3-1-en" class="hidden">Horse-themed experience zones and riding education programs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            <span id="point3-2-ko">전통 야시장 및 문화 체험 공간</span>
+                            <span id="point3-2-en" class="hidden">Traditional night markets and cultural experience areas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            <span id="point3-3-ko">다른 도시로의 프랜차이즈 확장</span>
+                            <span id="point3-3-en" class="hidden">Franchise expansion to other cities</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-2xl">🛡️</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">
+                            <span id="point4-title-ko">리스크 관리</span>
+                            <span id="point4-title-en" class="hidden">Risk Management</span>
+                        </h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">•</span>
+                            <span id="point4-1-ko">포괄적 보험 가입 및 안전 시스템</span>
+                            <span id="point4-1-en" class="hidden">Comprehensive insurance coverage and safety systems</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">•</span>
+                            <span id="point4-2-ko">6개월치 운영비 예비자금 확보</span>
+                            <span id="point4-2-en" class="hidden">6-month operating expense reserve fund</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">•</span>
+                            <span id="point4-3-ko">현지 파트너십 및 정부 관계 구축</span>
+                            <span id="point4-3-en" class="hidden">Local partnerships and government relations</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revenue Model Section -->
+    <section id="revenue" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    <span id="revenue-title-ko">💰 수익 모델 분석</span>
+                    <span id="revenue-title-en" class="hidden">💰 Revenue Model Analysis</span>
+                </h2>
+                <p class="text-xl text-gray-600">
+                    <span id="revenue-desc-ko">체계적이고 투명한 수익 구조 분석</span>
+                    <span id="revenue-desc-en" class="hidden">Systematic and transparent revenue structure analysis</span>
+                </p>
+            </div>
+
+            <!-- Revenue Calculator -->
+            <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 mb-12">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                    <span id="calc-title-ko">🧮 수익 계산기</span>
+                    <span id="calc-title-en" class="hidden">🧮 Revenue Calculator</span>
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            <span id="calc-shows-ko">일일 공연 횟수</span>
+                            <span id="calc-shows-en" class="hidden">Daily Shows</span>
+                        </label>
+                        <input type="number" id="dailyShows" value="2" min="1" max="4" 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mongolian-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            <span id="calc-audience-ko">회당 관객 수</span>
+                            <span id="calc-audience-en" class="hidden">Audience per Show</span>
+                        </label>
+                        <input type="number" id="audiencePerShow" value="500" min="100" max="1000" 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mongolian-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            <span id="calc-price-ko">티켓 가격 ($)</span>
+                            <span id="calc-price-en" class="hidden">Ticket Price ($)</span>
+                        </label>
+                        <input type="number" id="ticketPrice" value="20" min="10" max="50" 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mongolian-500 focus:border-transparent">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                    <div class="bg-white rounded-lg p-4 shadow-sm">
+                        <p class="text-sm text-gray-600">
+                            <span id="calc-monthly-ko">월간 수익</span>
+                            <span id="calc-monthly-en" class="hidden">Monthly Revenue</span>
+                        </p>
+                        <p class="text-2xl font-bold text-mongolian-600" id="monthlyRevenue">$600,000</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-sm">
+                        <p class="text-sm text-gray-600">
+                            <span id="calc-commission-ko">여행사 수수료</span>
+                            <span id="calc-commission-en" class="hidden">Agency Commission</span>
+                        </p>
+                        <p class="text-2xl font-bold text-red-600" id="commission">-$180,000</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-sm">
+                        <p class="text-sm text-gray-600">
+                            <span id="calc-net-monthly-ko">월간 순수익</span>
+                            <span id="calc-net-monthly-en" class="hidden">Monthly Net</span>
+                        </p>
+                        <p class="text-2xl font-bold text-green-600" id="monthlyNet">$420,000</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-sm">
+                        <p class="text-sm text-gray-600">
+                            <span id="calc-annual-ko">연간 순수익</span>
+                            <span id="calc-annual-en" class="hidden">Annual Net</span>
+                        </p>
+                        <p class="text-2xl font-bold text-mongolian-600" id="annualNet">$5,040,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Revenue Breakdown Chart -->
+            <div class="bg-gray-50 rounded-2xl p-8 mb-12">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                    <span id="breakdown-title-ko">📊 수익 구조 분석</span>
+                    <span id="breakdown-title-en" class="hidden">📊 Revenue Breakdown</span>
+                </h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <canvas id="revenueChart" width="400" height="300"></canvas>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-4 bg-white rounded-lg">
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-mongolian-500 rounded-full mr-3"></div>
+                                <span class="font-medium">
+                                    <span id="chart-tickets-ko">티켓 판매</span>
+                                    <span id="chart-tickets-en" class="hidden">Ticket Sales</span>
+                                </span>
+                            </div>
+                            <span class="font-bold text-mongolian-600">85%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-white rounded-lg">
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-earth-500 rounded-full mr-3"></div>
+                                <span class="font-medium">
+                                    <span id="chart-experience-ko">체험 프로그램</span>
+                                    <span id="chart-experience-en" class="hidden">Experience Programs</span>
+                                </span>
+                            </div>
+                            <span class="font-bold text-earth-600">8%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-white rounded-lg">
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-green-500 rounded-full mr-3"></div>
+                                <span class="font-medium">
+                                    <span id="chart-souvenirs-ko">기념품</span>
+                                    <span id="chart-souvenirs-en" class="hidden">Souvenirs</span>
+                                </span>
+                            </div>
+                            <span class="font-bold text-green-600">4%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-white rounded-lg">
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-blue-500 rounded-full mr-3"></div>
+                                <span class="font-medium">
+                                    <span id="chart-fnb-ko">F&B</span>
+                                    <span id="chart-fnb-en" class="hidden">F&B</span>
+                                </span>
+                            </div>
+                            <span class="font-bold text-blue-600">3%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operating Costs -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                    <span id="costs-title-ko">💼 운영비 상세 내역</span>
+                    <span id="costs-title-en" class="hidden">💼 Operating Costs Breakdown</span>
+                </h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="pb-4 font-semibold text-gray-900">
+                                    <span id="table-item-ko">항목</span>
+                                    <span id="table-item-en" class="hidden">Item</span>
+                                </th>
+                                <th class="pb-4 font-semibold text-gray-900 text-right">
+                                    <span id="table-monthly-ko">월간 비용</span>
+                                    <span id="table-monthly-en" class="hidden">Monthly Cost</span>
+                                </th>
+                                <th class="pb-4 font-semibold text-gray-900 text-right">
+                                    <span id="table-annual-ko">연간 비용</span>
+                                    <span id="table-annual-en" class="hidden">Annual Cost</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="space-y-2">
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3">
+                                    <span id="cost-labor-ko">인건비 (기수, 스태프)</span>
+                                    <span id="cost-labor-en" class="hidden">Labor (Riders, Staff)</span>
+                                </td>
+                                <td class="py-3 text-right font-medium">$20,000</td>
+                                <td class="py-3 text-right font-medium">$240,000</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3">
+                                    <span id="cost-horses-ko">마필 관리비</span>
+                                    <span id="cost-horses-en" class="hidden">Horse Care</span>
+                                </td>
+                                <td class="py-3 text-right font-medium">$10,000</td>
+                                <td class="py-3 text-right font-medium">$120,000</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3">
+                                    <span id="cost-rent-ko">공연장 임대료</span>
+                                    <span id="cost-rent-en" class="hidden">Venue Rent</span>
+                                </td>
+                                <td class="py-3 text-right font-medium">$12,500</td>
+                                <td class="py-3 text-right font-medium">$150,000</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3">
+                                    <span id="cost-tech-ko">조명/음향 운영비</span>
+                                    <span id="cost-tech-en" class="hidden">Lighting/Sound</span>
+                                </td>
+                                <td class="py-3 text-right font-medium">$5,000</td>
+                                <td class="py-3 text-right font-medium">$60,000</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3">
+                                    <span id="cost-marketing-ko">마케팅 예산</span>
+                                    <span id="cost-marketing-en" class="hidden">Marketing</span>
+                                </td>
+                                <td class="py-3 text-right font-medium">$5,000</td>
+                                <td class="py-3 text-right font-medium">$60,000</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3">
+                                    <span id="cost-reserve-ko">예비비</span>
+                                    <span id="cost-reserve-en" class="hidden">Reserve Fund</span>
+                                </td>
+                                <td class="py-3 text-right font-medium">$5,000</td>
+                                <td class="py-3 text-right font-medium">$60,000</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3">
+                                    <span id="cost-utilities-ko">기타 (유틸리티, 세금)</span>
+                                    <span id="cost-utilities-en" class="hidden">Utilities, Taxes</span>
+                                </td>
+                                <td class="py-3 text-right font-medium">$7,500</td>
+                                <td class="py-3 text-right font-medium">$90,000</td>
+                            </tr>
+                            <tr class="bg-gray-50 font-bold">
+                                <td class="py-4">
+                                    <span id="cost-total-ko">총 운영비</span>
+                                    <span id="cost-total-en" class="hidden">Total Operating Costs</span>
+                                </td>
+                                <td class="py-4 text-right text-red-600">$65,000</td>
+                                <td class="py-4 text-right text-red-600">$780,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Vision & Expansion -->
+    <section class="py-20 bg-gradient-to-br from-earth-50 to-mongolian-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    <span id="vision-title-ko">🧭 사업 비전 & 확장 계획</span>
+                    <span id="vision-title-en" class="hidden">🧭 Business Vision & Expansion Plan</span>
+                </h2>
+                <p class="text-xl text-gray-600">
+                    <span id="vision-desc-ko">시엠립 관광의 새로운 랜드마크에서 동남아시아 대표 브랜드로</span>
+                    <span id="vision-desc-en" class="hidden">From Siem Reap's new landmark to Southeast Asia's leading brand</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Phase 1: Foundation -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-mongolian-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🏗️</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">
+                            <span id="phase1-title-ko">1단계: 기반 구축</span>
+                            <span id="phase1-title-en" class="hidden">Phase 1: Foundation</span>
+                        </h3>
+                        <p class="text-sm text-gray-500">
+                            <span id="phase1-time-ko">0-18개월</span>
+                            <span id="phase1-time-en" class="hidden">0-18 months</span>
+                        </p>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="text-mongolian-500 mr-2 mt-1">•</span>
+                            <span id="phase1-1-ko">공연장 건설 및 마필 도입</span>
+                            <span id="phase1-1-en" class="hidden">Venue construction and horse import</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-mongolian-500 mr-2 mt-1">•</span>
+                            <span id="phase1-2-ko">몽골 기수진 및 현지 스태프 훈련</span>
+                            <span id="phase1-2-en" class="hidden">Mongolian riders and local staff training</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-mongolian-500 mr-2 mt-1">•</span>
+                            <span id="phase1-3-ko">정식 공연 런칭 및 마케팅</span>
+                            <span id="phase1-3-en" class="hidden">Official performance launch and marketing</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Phase 2: Growth -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-earth-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">📈</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">
+                            <span id="phase2-title-ko">2단계: 성장 & 확장</span>
+                            <span id="phase2-title-en" class="hidden">Phase 2: Growth & Expansion</span>
+                        </h3>
+                        <p class="text-sm text-gray-500">
+                            <span id="phase2-time-ko">18-36개월</span>
+                            <span id="phase2-time-en" class="hidden">18-36 months</span>
+                        </p>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="text-earth-500 mr-2 mt-1">•</span>
+                            <span id="phase2-1-ko">말 테마 체험존 및 승마 교육</span>
+                            <span id="phase2-1-en" class="hidden">Horse-themed experience zone and riding education</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-earth-500 mr-2 mt-1">•</span>
+                            <span id="phase2-2-ko">전통 야시장 및 문화 공간</span>
+                            <span id="phase2-2-en" class="hidden">Traditional night market and cultural space</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-earth-500 mr-2 mt-1">•</span>
+                            <span id="phase2-3-ko">VIP 패키지 및 기업 이벤트</span>
+                            <span id="phase2-3-en" class="hidden">VIP packages and corporate events</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Phase 3: Franchise -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🌏</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">
+                            <span id="phase3-title-ko">3단계: 브랜드화</span>
+                            <span id="phase3-title-en" class="hidden">Phase 3: Branding</span>
+                        </h3>
+                        <p class="text-sm text-gray-500">
+                            <span id="phase3-time-ko">36개월+</span>
+                            <span id="phase3-time-en" class="hidden">36+ months</span>
+                        </p>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 mt-1">•</span>
+                            <span id="phase3-1-ko">태국, 베트남 등 타 도시 확장</span>
+                            <span id="phase3-1-en" class="hidden">Expansion to Thailand, Vietnam and other cities</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 mt-1">•</span>
+                            <span id="phase3-2-ko">프랜차이즈 모델 개발</span>
+                            <span id="phase3-2-en" class="hidden">Franchise model development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 mt-1">•</span>
+                            <span id="phase3-3-ko">동남아 대표 문화 콘텐츠 브랜드</span>
+                            <span id="phase3-3-en" class="hidden">Leading cultural content brand in Southeast Asia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    <span id="contact-title-ko">📞 투자 문의</span>
+                    <span id="contact-title-en" class="hidden">📞 Investment Inquiry</span>
+                </h2>
+                <p class="text-xl text-gray-600">
+                    <span id="contact-desc-ko">함께 만들어갈 성공적인 투자 기회에 대해 논의해보세요</span>
+                    <span id="contact-desc-en" class="hidden">Let's discuss this successful investment opportunity together</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Contact Information -->
+                <div class="bg-gradient-to-br from-mongolian-50 to-earth-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                        <span id="contact-info-ko">연락처 정보</span>
+                        <span id="contact-info-en" class="hidden">Contact Information</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-mongolian-100 rounded-lg flex items-center justify-center">
+                                <span class="text-mongolian-600">📧</span>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-900">invest@mongolianequestrianshow.com</p>
+                                <p class="text-sm text-gray-600">
+                                    <span id="email-desc-ko">투자 관련 문의</span>
+                                    <span id="email-desc-en" class="hidden">Investment inquiries</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-earth-100 rounded-lg flex items-center justify-center">
+                                <span class="text-earth-600">📱</span>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-900">+855 12 345 678</p>
+                                <p class="text-sm text-gray-600">
+                                    <span id="phone-desc-ko">캄보디아 현지 연락처</span>
+                                    <span id="phone-desc-en" class="hidden">Cambodia local contact</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                                <span class="text-green-600">📍</span>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-900">
+                                    <span id="address-ko">시엠립, 캄보디아</span>
+                                    <span id="address-en" class="hidden">Siem Reap, Cambodia</span>
+                                </p>
+                                <p class="text-sm text-gray-600">
+                                    <span id="address-desc-ko">앙코르와트 인근 예정지</span>
+                                    <span id="address-desc-en" class="hidden">Near Angkor Wat complex</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <button onclick="downloadBrochure()" 
+                                class="w-full bg-mongolian-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-mongolian-700 transition-colors duration-200">
+                            <span id="download-btn-ko">📄 투자 브로셔 다운로드</span>
+                            <span id="download-btn-en" class="hidden">📄 Download Investment Brochure</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-gray-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                        <span id="form-title-ko">문의 양식</span>
+                        <span id="form-title-en" class="hidden">Inquiry Form</span>
+                    </h3>
+                    <form class="space-y-4" data-implementation="Connect to email service or backend API">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                <span id="form-name-ko">성함</span>
+                                <span id="form-name-en" class="hidden">Name</span>
+                            </label>
+                            <input type="text" data-mock="true" placeholder="홍길동" 
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mongolian-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                <span id="form-email-ko">이메일</span>
+                                <span id="form-email-en" class="hidden">Email</span>
+                            </label>
+                            <input type="email" data-mock="true" placeholder="investor@example.com" 
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mongolian-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                <span id="form-interest-ko">투자 관심 분야</span>
+                                <span id="form-interest-en" class="hidden">Investment Interest</span>
+                            </label>
+                            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mongolian-500 focus:border-transparent">
+                                <option id="option-select-ko">선택해주세요</option>
+                                <option id="option-select-en" class="hidden">Please select</option>
+                                <option id="option-main-ko">주요 투자자</option>
+                                <option id="option-main-en" class="hidden">Main Investor</option>
+                                <option id="option-partner-ko">전략적 파트너</option>
+                                <option id="option-partner-en" class="hidden">Strategic Partner</option>
+                                <option id="option-franchise-ko">프랜차이즈</option>
+                                <option id="option-franchise-en" class="hidden">Franchise</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                <span id="form-message-ko">메시지</span>
+                                <span id="form-message-en" class="hidden">Message</span>
+                            </label>
+                            <textarea rows="4" data-mock="true" placeholder="투자에 대한 문의사항을 적어주세요..." 
+                                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mongolian-500 focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" 
+                                class="w-full bg-earth-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-earth-700 transition-colors duration-200"
+                                data-event="click:handleSubmit" data-implementation="Should validate form and send email">
+                            <span id="form-submit-ko">문의 보내기</span>
+                            <span id="form-submit-en" class="hidden">Send Inquiry</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-mongolian-600 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">🐎</span>
+                        </div>
+                        <span class="font-bold text-xl">
+                            <span id="footer-title-ko">몽골 마상곡예</span>
+                            <span id="footer-title-en" class="hidden">Mongolian Equestrian</span>
+                        </span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        <span id="footer-desc-ko">시엠립 관광의 새로운 랜드마크</span>
+                        <span id="footer-desc-en" class="hidden">Siem Reap's new tourism landmark</span>
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">
+                        <span id="footer-links-ko">빠른 링크</span>
+                        <span id="footer-links-en" class="hidden">Quick Links</span>
+                    </h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#overview" class="hover:text-white transition-colors">
+                            <span id="footer-overview-ko">사업 개요</span>
+                            <span id="footer-overview-en" class="hidden">Overview</span>
+                        </a></li>
+                        <li><a href="#investment" class="hover:text-white transition-colors">
+                            <span id="footer-investment-ko">투자 포인트</span>
+                            <span id="footer-investment-en" class="hidden">Investment</span>
+                        </a></li>
+                        <li><a href="#revenue" class="hover:text-white transition-colors">
+                            <span id="footer-revenue-ko">수익 모델</span>
+                            <span id="footer-revenue-en" class="hidden">Revenue Model</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">
+                        <span id="footer-contact-ko">연락처</span>
+                        <span id="footer-contact-en" class="hidden">Contact</span>
+                    </h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>invest@mongolianequestrianshow.com</p>
+                        <p>+855 12 345 678</p>
+                        <p>
+                            <span id="footer-location-ko">시엠립, 캄보디아</span>
+                            <span id="footer-location-en" class="hidden">Siem Reap, Cambodia</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 <span id="footer-copyright-ko">몽골 마상곡예 공연</span><span id="footer-copyright-en" class="hidden">Mongolian Equestrian Show</span>. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Toggle Functionality
+        let currentLang = 'ko';
+        
+        function toggleLanguage() {
+            currentLang = currentLang === 'ko' ? 'en' : 'ko';
+            const newLang = currentLang;
+            const oldLang = currentLang === 'ko' ? 'en' : 'ko';
+            
+            // Hide current language elements
+            document.querySelectorAll(`[id$='-${oldLang}']`).forEach(el => {
+                el.classList.add('hidden');
+            });
+            
+            // Show new language elements
+            document.querySelectorAll(`[id$='-${newLang}']`).forEach(el => {
+                el.classList.remove('hidden');
+            });
+        }
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Revenue Calculator
+        function updateCalculator() {
+            const dailyShows = parseInt(document.getElementById('dailyShows').value);
+            const audiencePerShow = parseInt(document.getElementById('audiencePerShow').value);
+            const ticketPrice = parseInt(document.getElementById('ticketPrice').value);
+            
+            const monthlyRevenue = dailyShows * audiencePerShow * ticketPrice * 30;
+            const commission = monthlyRevenue * 0.3; // 30% commission
+            const monthlyNet = monthlyRevenue - commission;
+            const annualNet = monthlyNet * 12;
+            
+            document.getElementById('monthlyRevenue').textContent = `$${monthlyRevenue.toLocaleString()}`;
+            document.getElementById('commission').textContent = `-$${commission.toLocaleString()}`;
+            document.getElementById('monthlyNet').textContent = `$${monthlyNet.toLocaleString()}`;
+            document.getElementById('annualNet').textContent = `$${annualNet.toLocaleString()}`;
+        }
+
+        // Event listeners for calculator
+        ['dailyShows', 'audiencePerShow', 'ticketPrice'].forEach(id => {
+            document.getElementById(id).addEventListener('input', updateCalculator);
+        });
+
+        // Revenue Chart
+        function initRevenueChart() {
+            const ctx = document.getElementById('revenueChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Ticket Sales', 'Experience Programs', 'Souvenirs', 'F&B'],
+                    datasets: [{
+                        data: [85, 8, 4, 3],
+                        backgroundColor: [
+                            '#EA580C', // Mongolian orange
+                            '#EAB308', // Earth yellow
+                            '#10B981', // Green
+                            '#3B82F6'  // Blue
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        // Download functionality
+        function downloadBrochure() {
+            // TODO: Implement actual PDF download
+            alert(currentLang === 'ko' ? '브로셔 다운로드 기능을 준비 중입니다.' : 'Brochure download feature is being prepared.');
+        }
+
+        function openBrochure() {
+            downloadBrochure();
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCalculator();
+            initRevenueChart();
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 100) {
+                    navbar.classList.add('shadow-lg');
+                } else {
+                    navbar.classList.remove('shadow-lg');
+                }
+            });
+        });
+
+        // Form submission (placeholder)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // TODO: Implement actual form submission logic
+            alert(currentLang === 'ko' ? '문의가 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.' : 'Your inquiry has been received. We will contact you soon.');
+        });
+    </script>
+</body>
+</html>
